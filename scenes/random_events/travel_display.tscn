@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bke2ntpirhwhf"]
+
+[ext_resource type="Script" path="res://scenes/random_events/travel_display.gd" id="1_4imvk"]
+[ext_resource type="Script" path="res://scenes/random_events/travel_label_data.gd" id="2_opq0l"]
+[ext_resource type="LabelSettings" uid="uid://b8m64q2yoydhl" path="res://assets/fonts/yoster_traveler.tres" id="2_q7u32"]
+
+[node name="TravelDisplay" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4imvk")
+
+[node name="TravelLabelData" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = ExtResource("2_q7u32")
+horizontal_alignment = 1
+script = ExtResource("2_opq0l")
+
+[node name="CursorTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="CursorTimer" to="." method="_on_timer_timeout"]

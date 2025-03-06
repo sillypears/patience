@@ -1,0 +1,182 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7uqwd327hxf1"]
+
+[ext_resource type="Script" path="res://scenes/gameover/gameover.gd" id="1_n2sm8"]
+[ext_resource type="LabelSettings" uid="uid://gk71ig7026fe" path="res://assets/fonts/yoster_go_header.tres" id="2_6adj5"]
+
+[node name="Gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n2sm8")
+
+[node name="Contain" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Sep" type="VBoxContainer" parent="Contain"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="BoxTop" type="BoxContainer" parent="Contain/Sep"]
+layout_mode = 2
+
+[node name="LEFT" type="HBoxContainer" parent="Contain/Sep/BoxTop"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="LeftStuffHolder" type="VBoxContainer" parent="Contain/Sep/BoxTop/LEFT"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="HighScore" type="Label" parent="Contain/Sep/BoxTop/LEFT/LeftStuffHolder"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "HIGHSCORE:"
+label_settings = ExtResource("2_6adj5")
+horizontal_alignment = 2
+
+[node name="TotalTime" type="Label" parent="Contain/Sep/BoxTop/LEFT/LeftStuffHolder"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "TIME:"
+label_settings = ExtResource("2_6adj5")
+horizontal_alignment = 2
+
+[node name="SPACER" type="Label" parent="Contain/Sep/BoxTop/LEFT/LeftStuffHolder"]
+layout_mode = 2
+
+[node name="CENTER" type="HBoxContainer" parent="Contain/Sep/BoxTop"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RIGHT" type="HBoxContainer" parent="Contain/Sep/BoxTop"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.0
+
+[node name="RightStuffHolder" type="VBoxContainer" parent="Contain/Sep/BoxTop/RIGHT"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HighScoreValue" type="Label" parent="Contain/Sep/BoxTop/RIGHT/RightStuffHolder"]
+layout_mode = 2
+text = "-1"
+label_settings = ExtResource("2_6adj5")
+
+[node name="TotalTimeValue" type="Label" parent="Contain/Sep/BoxTop/RIGHT/RightStuffHolder"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "-1"
+label_settings = ExtResource("2_6adj5")
+
+[node name="SPACER" type="Label" parent="Contain/Sep/BoxTop/RIGHT/RightStuffHolder"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="Contain/Sep"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "--- DETAILS ---"
+label_settings = ExtResource("2_6adj5")
+
+[node name="BoxBot" type="BoxContainer" parent="Contain/Sep"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="LEFT" type="HBoxContainer" parent="Contain/Sep/BoxBot"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="LeftStuffHolder" type="VBoxContainer" parent="Contain/Sep/BoxBot/LEFT"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="SPACER" type="Label" parent="Contain/Sep/BoxBot/LEFT/LeftStuffHolder"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="TotalClicks" type="Label" parent="Contain/Sep/BoxBot/LEFT/LeftStuffHolder"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "CLICKS:"
+label_settings = ExtResource("2_6adj5")
+horizontal_alignment = 2
+
+[node name="TrucksSeen" type="Label" parent="Contain/Sep/BoxBot/LEFT/LeftStuffHolder"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "TRUCKS:"
+label_settings = ExtResource("2_6adj5")
+horizontal_alignment = 2
+
+[node name="MilesDisplayed" type="Label" parent="Contain/Sep/BoxBot/LEFT/LeftStuffHolder"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "MILES SEEN:"
+label_settings = ExtResource("2_6adj5")
+horizontal_alignment = 2
+
+[node name="MouseTraveled" type="Label" parent="Contain/Sep/BoxBot/LEFT/LeftStuffHolder"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "MILES MOVED:"
+label_settings = ExtResource("2_6adj5")
+horizontal_alignment = 2
+
+[node name="CENTER" type="HBoxContainer" parent="Contain/Sep/BoxBot"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RIGHT" type="HBoxContainer" parent="Contain/Sep/BoxBot"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 3.0
+
+[node name="RightStuffHolder" type="VBoxContainer" parent="Contain/Sep/BoxBot/RIGHT"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SPACER" type="Label" parent="Contain/Sep/BoxBot/RIGHT/RightStuffHolder"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="TotalClicksValue" type="Label" parent="Contain/Sep/BoxBot/RIGHT/RightStuffHolder"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "-1"
+label_settings = ExtResource("2_6adj5")
+
+[node name="TrucksSeenValue" type="Label" parent="Contain/Sep/BoxBot/RIGHT/RightStuffHolder"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "-1"
+label_settings = ExtResource("2_6adj5")
+
+[node name="MilesDisplayedValue" type="Label" parent="Contain/Sep/BoxBot/RIGHT/RightStuffHolder"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "-1"
+label_settings = ExtResource("2_6adj5")
+
+[node name="MouseTraveledValue" type="Label" parent="Contain/Sep/BoxBot/RIGHT/RightStuffHolder"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "-1"
+label_settings = ExtResource("2_6adj5")

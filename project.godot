@@ -1,0 +1,56 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Patience Simulator"
+run/main_scene="res://scenes/game/game.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://globals/game_manager.gd"
+MouseTravel="*res://globals/mouse_travel.gd"
+SoundManager="*res://globals/sound_manager.gd"
+Utils="*res://globals/utils.gd"
+
+[display]
+
+window/size/viewport_width=800
+window/size/viewport_height=1280
+window/stretch/mode="canvas_items"
+window/handheld/orientation=1
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray()
+
+[global_group]
+
+Finisher=""
+TruckSounds=""
+
+[input]
+
+god_mode={
+"deadzone": 0.5,
+"events": []
+}
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="mobile"

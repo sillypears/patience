@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2ml0gljsfqxf"]
+
+[ext_resource type="Script" path="res://scenes/game/game.gd" id="1_vv1uf"]
+[ext_resource type="PackedScene" uid="uid://6ial6c2b00h7" path="res://scenes/game/header.tscn" id="2_bx211"]
+[ext_resource type="PackedScene" uid="uid://cvdakyqu1t4uy" path="res://scenes/cursor/cursor.tscn" id="2_tyln8"]
+[ext_resource type="PackedScene" uid="uid://dte6vw1jpb8xg" path="res://scenes/game/footer.tscn" id="4_1urid"]
+[ext_resource type="PackedScene" uid="uid://dvtgpwyu1e32d" path="res://scenes/game/action.tscn" id="4_cw67t"]
+
+[node name="Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vv1uf")
+cursor_anim = ExtResource("2_tyln8")
+
+[node name="Container" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container"]
+layout_mode = 2
+
+[node name="Header" parent="Container/VBoxContainer" instance=ExtResource("2_bx211")]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Action" parent="Container/VBoxContainer" instance=ExtResource("4_cw67t")]
+z_index = 0
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Footer" parent="Container/VBoxContainer" instance=ExtResource("4_1urid")]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]

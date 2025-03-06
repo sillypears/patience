@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cswwk1ikg5r4r"]
+
+[ext_resource type="FontFile" uid="uid://cq8rqugk5q4to" path="res://assets/fonts/yoster.ttf" id="1_5rkev"]
+
+[resource]
+font = ExtResource("1_5rkev")
+font_size = 22
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)

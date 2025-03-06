@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dl0tufn1qcw2t"]
+
+[ext_resource type="FontFile" uid="uid://cq8rqugk5q4to" path="res://assets/fonts/yoster.ttf" id="1_w6wnw"]
+
+[resource]
+font = ExtResource("1_w6wnw")
+font_size = 24
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)

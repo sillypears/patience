@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://i53j4cp0vctx"]
+
+[ext_resource type="Script" path="res://scenes/random_events/truck_vroom.gd" id="1_c6kmp"]
+[ext_resource type="Texture2D" uid="uid://c4u8bmb3n8agd" path="res://assets/sprites/trucker.png" id="1_w2wyg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76e7t"]
+atlas = ExtResource("1_w2wyg")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chx6j"]
+atlas = ExtResource("1_w2wyg")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rib7n"]
+atlas = ExtResource("1_w2wyg")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00oxb"]
+atlas = ExtResource("1_w2wyg")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j547y"]
+atlas = ExtResource("1_w2wyg")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4br2o"]
+atlas = ExtResource("1_w2wyg")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sp5c3"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76e7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chx6j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rib7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00oxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j547y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4br2o")
+}],
+"loop": true,
+"name": &"drive",
+"speed": 15.0
+}]
+
+[node name="TruckVroom" type="AnimatedSprite2D" groups=["TruckSounds"]]
+z_index = 3
+sprite_frames = SubResource("SpriteFrames_sp5c3")
+animation = &"drive"
+frame = 2
+frame_progress = 0.0252026
+script = ExtResource("1_c6kmp")
