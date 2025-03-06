@@ -19,5 +19,6 @@ func _ready() -> void:
 	mouse_traveled_value.text = str(GM.MOUSE_TRAVELED) + " MILES"
 	trucks_seen_value.text = str(GM.RANDOM_EVENTS_DICT["trucks"].picked)
 	miles_displayed_value.text = str(GM.RANDOM_EVENTS_DICT["travel"].picked)
+	
 func _process(delta: float) -> void:
 	pass

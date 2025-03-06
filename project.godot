@@ -21,6 +21,7 @@ GameManager="*res://globals/game_manager.gd"
 MouseTravel="*res://globals/mouse_travel.gd"
 SoundManager="*res://globals/sound_manager.gd"
 Utils="*res://globals/utils.gd"
+SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 
 [display]
 

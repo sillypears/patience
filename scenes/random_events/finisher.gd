@@ -1,8 +1,11 @@
 extends Control
 
+
 @onready var finish_button: Button = $FinishButton
 @onready var button_timer: Timer = $ButtonTimer
-const GAMEOVER = preload("res://scenes/gameover/gameover.tscn")
+
+
+const GAMEOVER := preload("res://scenes/gameover/gameover.tscn")
 
 func _ready() -> void:
 	var mouser := get_local_mouse_position()
@@ -16,7 +19,8 @@ func _process(delta: float) -> void:
 
 func _on_finish_button_pressed() -> void:
 	print("lol")
-	get_tree().change_scene_to_packed(GAMEOVER)
+	SceneManager.change_scene("res://scenes/gameover/gameover.tscn", {"animation_name_enter": "fade", "pattern_leave": "radial"})
+	#get_tree().change_scene_to_packed(GAMEOVER)
 
 func _on_button_timer_timeout() -> void:
 	queue_free()

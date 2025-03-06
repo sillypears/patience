@@ -15,7 +15,7 @@ var RANDOM_EVENTS_DICT = {
 	},
 	"finisher": {
 		"scene": "res://scenes/random_events/finisher.tscn",
-		"rarity": 100,
+		"rarity": 10,
 		"picked": 0
 	},
 	"trucks": {
