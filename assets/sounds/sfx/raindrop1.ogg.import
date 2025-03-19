@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/raindrop1.ogg-550a90ab05857b056769e97967b54f0
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

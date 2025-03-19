@@ -11,6 +11,8 @@ extends Control
 @onready var mouse_traveled_value: Label = $Contain/Sep/BoxBot/RIGHT/RightStuffHolder/MouseTraveledValue
 @onready var trucks_seen_value: Label = $Contain/Sep/BoxBot/RIGHT/RightStuffHolder/TrucksSeenValue
 @onready var miles_displayed_value: Label = $Contain/Sep/BoxBot/RIGHT/RightStuffHolder/MilesDisplayedValue
+@onready var bubbles_spawned_value: Label = $Contain/Sep/BoxBot/RIGHT/RightStuffHolder/BubblesSpawnedValue
+@onready var bubbles_popped_value: Label = $Contain/Sep/BoxBot/RIGHT/RightStuffHolder/BubblesPoppedValue
 
 func _ready() -> void:
 	high_score_value.text = str(GM.HIGH_SCORE)
@@ -19,6 +21,8 @@ func _ready() -> void:
 	mouse_traveled_value.text = str(GM.MOUSE_TRAVELED) + " MILES"
 	trucks_seen_value.text = str(GM.RANDOM_EVENTS_DICT["trucks"].picked)
 	miles_displayed_value.text = str(GM.RANDOM_EVENTS_DICT["travel"].picked)
+	bubbles_spawned_value.text = str(GM.RANDOM_EVENTS_DICT["bubble"].picked)
+	bubbles_popped_value.text = str(GM.BUBBLES_POPPED)
 	
 func _process(delta: float) -> void:
 	pass
