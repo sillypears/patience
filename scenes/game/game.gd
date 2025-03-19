@@ -18,7 +18,7 @@ func _input(event) -> void:
 	if event is InputEventMouseButton or touch_screen_button.is_pressed():
 		var picked = GM.RANDOM_EVENTS_LIST.pick_random()
 		if randi() % GM.RANDOM_EVENTS_DICT[picked].rarity == 0:
-			print("It's random! " + GM.RANDOM_EVENTS_DICT[picked].scene)
+			print_debug("It's random! " + GM.RANDOM_EVENTS_DICT[picked].scene)
 			GM.increase_picked_scene(GM.RANDOM_EVENTS_DICT[picked].scene)
 
 			var rando_event = load(GM.RANDOM_EVENTS_DICT[picked].scene)

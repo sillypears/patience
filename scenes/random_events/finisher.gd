@@ -11,14 +11,14 @@ func _ready() -> void:
 	var mouser := get_local_mouse_position()
 	finish_button.position.x = mouser.x + randi_range(-20, 20)
 	finish_button.position.y = mouser.y + randi_range(-20, 20)
-	print(finish_button.position)
+	print_debug(finish_button.position)
 
 func _process(delta: float) -> void:
 	pass
 
 
 func _on_finish_button_pressed() -> void:
-	print("lol")
+	print_debug("lol")
 	SceneManager.change_scene("res://scenes/gameover/gameover.tscn", {"animation_name_enter": "fade", "pattern_leave": "radial"})
 	#get_tree().change_scene_to_packed(GAMEOVER)
 

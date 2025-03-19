@@ -43,7 +43,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("end_game"):
-		print("why'd you push that")
+		print_debug("why'd you push that")
 		SceneManager.change_scene("res://scenes/gameover/gameover.tscn")
 		
 func update_timer(seconds: int) -> void:

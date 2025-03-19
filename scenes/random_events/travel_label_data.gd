@@ -8,7 +8,7 @@ const text_fader: float = 1.0
 func _ready() -> void:
 	pivot_offset = size / 2
 	position -= size/2
-	#print("Number " + str(GM.MOUSE_TRAVELED) + " growing at " + str(text_scaler))
+	#print_debug("Number " + str(GM.MOUSE_TRAVELED) + " growing at " + str(text_scaler))
 	self_modulate.r8 = randi() % 255
 	self_modulate.g8 = randi() % 255
 	self.modulate.b8 = randi() % 255
