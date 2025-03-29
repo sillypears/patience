@@ -7,6 +7,7 @@ var CLICKS: int = 0
 var BUBBLES_POPPED: int = 0
 var HIGH_SCORE: int = 0
 var MOUSE_TRAVELED: float = 0.0
+var FISH_TOUCHED: int = 0
 
 var RANDOM_EVENTS_DICT = {
 	"travel": {
@@ -26,7 +27,12 @@ var RANDOM_EVENTS_DICT = {
 	},
 	"bubble": {
 		"scene": "res://scenes/random_events/bubble.tscn",
-		"rarity": 20,
+		"rarity": 15,
+		"picked": 0
+	},
+	"fish": {
+		"scene": "res://scenes/random_events/fish.tscn",
+		"rarity": 5,
 		"picked": 0
 	}
 }
@@ -35,7 +41,8 @@ var RANDOM_EVENTS_LIST = [
 	"travel",
 	"finisher",
 	"trucks",
-	"bubble"
+	"bubble",
+	"fish"
 ]
 
 func _ready() -> void:

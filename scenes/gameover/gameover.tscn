@@ -153,6 +153,20 @@ text = "POPPED:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
+[node name="FishSeen" type="Label" parent="Contain/Sep/BoxBot/LEFT/LeftStuffHolder"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "FISH SPAWNED:"
+label_settings = ExtResource("2_6adj5")
+horizontal_alignment = 2
+
+[node name="FishTouched" type="Label" parent="Contain/Sep/BoxBot/LEFT/LeftStuffHolder"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "FISH TOUCHED:"
+label_settings = ExtResource("2_6adj5")
+horizontal_alignment = 2
+
 [node name="CENTER" type="HBoxContainer" parent="Contain/Sep/BoxBot"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -202,6 +216,18 @@ text = "-1"
 label_settings = ExtResource("2_6adj5")
 
 [node name="BubblesPoppedValue" type="Label" parent="Contain/Sep/BoxBot/RIGHT/RightStuffHolder"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "-1"
+label_settings = ExtResource("2_6adj5")
+
+[node name="FishSeenVal" type="Label" parent="Contain/Sep/BoxBot/RIGHT/RightStuffHolder"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "-1"
+label_settings = ExtResource("2_6adj5")
+
+[node name="FishTouchedVal" type="Label" parent="Contain/Sep/BoxBot/RIGHT/RightStuffHolder"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
