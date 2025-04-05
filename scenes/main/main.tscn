@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://crv2tm0tnnk21"]
+[gd_scene load_steps=4 format=3 uid="uid://crv2tm0tnnk21"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_gg1ct"]
+[ext_resource type="FontFile" uid="uid://cq8rqugk5q4to" path="res://assets/fonts/yoster.ttf" id="2_mf5y3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jmchh"]
+font = ExtResource("2_mf5y3")
+font_size = 60
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -10,3 +17,49 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gg1ct")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="BoxContainer" type="BoxContainer" parent="Margin"]
+layout_mode = 2
+vertical = true
+
+[node name="Vbox" type="VBoxContainer" parent="Margin/BoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Title" type="Label" parent="Margin/BoxContainer/Vbox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "A
+PATIENCE
+SIMULATOR"
+label_settings = SubResource("LabelSettings_jmchh")
+horizontal_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="Margin/BoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Start" type="Button" parent="Margin/BoxContainer/HBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_mf5y3")
+theme_override_font_sizes/font_size = 60
+text = "START"
+
+[node name="Scaler" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="pressed" from="Margin/BoxContainer/HBox/Start" to="." method="_on_start_pressed"]
+[connection signal="timeout" from="Scaler" to="." method="_on_scaler_timeout"]

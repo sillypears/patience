@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://doiy7xrnsvssk"]
+
+[ext_resource type="FontFile" uid="uid://cq8rqugk5q4to" path="res://assets/fonts/yoster.ttf" id="1_khfir"]
+
+[resource]
+line_spacing = 20.0
+font = ExtResource("1_khfir")
+font_size = 26
