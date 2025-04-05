@@ -1,9 +1,11 @@
 extends Control
 
+@onready var GM = $"/root/GameManager"
 @onready var scaler: Timer = $Scaler
 @onready var title: Label = $Margin/BoxContainer/Vbox/Title
 
 func _ready() -> void:
+	GM.GAME_STATE = GM.GAME_STATES.MAIN
 	await get_tree().process_frame
 	title.pivot_offset = title.size / 2
 	

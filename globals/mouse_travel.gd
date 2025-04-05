@@ -18,13 +18,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not is_window_focused:
 		return
-	
-	var current_mouse_position = get_viewport().get_mouse_position()
-	var window_size = DisplayServer.window_get_size()
-	if current_mouse_position.x < 0 or current_mouse_position.x > window_size.x or current_mouse_position.y < 0 or current_mouse_position.y > window_size.y:
-		return
-	
-	var distance_moved = current_mouse_position.distance_to(previous_mouse_position)
-	total_mouse_distance += distance_moved
-	GM.MOUSE_TRAVELED = int(total_mouse_distance / 100)
-	previous_mouse_position = current_mouse_position
+	if GM.GAME_STATE == GM.GAME_STATES.GAME:
+		var current_mouse_position = get_viewport().get_mouse_position()
+		var window_size = DisplayServer.window_get_size()
+		if current_mouse_position.x < 0 or current_mouse_position.x > window_size.x or current_mouse_position.y < 0 or current_mouse_position.y > window_size.y:
+			return
+		
+		var distance_moved = current_mouse_position.distance_to(previous_mouse_position)
+		GM.TRACKED["MOUSE_TRAVELED"] += int((total_mouse_distance ) + distance_moved / 100)
+		previous_mouse_position = current_mouse_position

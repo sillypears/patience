@@ -1,5 +1,6 @@
 extends Control
 
+@onready var GM = $"/root/GameManager"
 const WORD1 := "MADE"
 const WORD2 := "WITH"
 const WORD3 := "AI"
@@ -12,6 +13,7 @@ var WORD_COUNTER = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GM.GAME_STATE = GM.GAME_STATES.INTRO
 	timer.wait_time = 0.1
 	timer.start()
 

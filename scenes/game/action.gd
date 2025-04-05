@@ -10,7 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	score_data.text = str(GM.CLICKS)
+	score_data.text = str(GM.TRACKED["CLICKS"])
 
 
 func _on_score_data_item_rect_changed() -> void:

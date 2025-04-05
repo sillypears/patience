@@ -1,87 +1,97 @@
-[gd_scene load_steps=12 format=3 uid="uid://bbaj2vuusn2x4"]
+[gd_scene load_steps=13 format=3 uid="uid://bbaj2vuusn2x4"]
 
 [ext_resource type="Texture2D" uid="uid://b2d538h4rr6q5" path="res://assets/sprites/fish.png" id="1_4d4st"]
 [ext_resource type="Script" path="res://scenes/random_events/fish.gd" id="2_pj0v3"]
 [ext_resource type="FontFile" uid="uid://cq8rqugk5q4to" path="res://assets/fonts/yoster.ttf" id="3_qybpy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ht4vj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mddr7"]
 atlas = ExtResource("1_4d4st")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_urdno"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bw4n"]
 atlas = ExtResource("1_4d4st")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jmqbb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_86tc6"]
 atlas = ExtResource("1_4d4st")
 region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_np847"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8da5f"]
 atlas = ExtResource("1_4d4st")
 region = Rect2(192, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_61s72"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0k0f3"]
 atlas = ExtResource("1_4d4st")
 region = Rect2(256, 0, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_po0lm"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xfl2c"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ht4vj")
+"texture": SubResource("AtlasTexture_mddr7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_urdno")
+"texture": SubResource("AtlasTexture_2bw4n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jmqbb")
+"texture": SubResource("AtlasTexture_86tc6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_np847")
+"texture": SubResource("AtlasTexture_8da5f")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_61s72")
+"texture": SubResource("AtlasTexture_0k0f3")
 }],
 "loop": true,
 "name": &"default",
-"speed": 6.0
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_31nnn"]
-radius = 23.0
-height = 50.0
+radius = 25.0
+height = 56.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0dw3r"]
+radius = 7.0
+height = 42.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_kkvbp"]
 line_spacing = 0.0
 font = ExtResource("3_qybpy")
 shadow_color = Color(0, 0, 0, 1)
 
-[node name="Fish" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_po0lm")
-autoplay = "default"
-frame = 3
-frame_progress = 0.209647
+[node name="Fish" type="Node2D"]
 script = ExtResource("2_pj0v3")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="Fish" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xfl2c")
+frame = 3
+frame_progress = 0.774012
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Fish"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="Area2D" type="Area2D" parent="Fish"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fish/Area2D"]
 position = Vector2(-3, 0)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_31nnn")
 
-[node name="Touched" type="Label" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Fish/Area2D"]
+position = Vector2(25, -2)
+shape = SubResource("CapsuleShape2D_0dw3r")
+
+[node name="Touched" type="Label" parent="Fish"]
 offset_left = -13.0
 offset_top = 12.0
 offset_right = 10.0
 offset_bottom = 34.0
+pivot_offset = Vector2(12, 11)
 text = "0"
 label_settings = SubResource("LabelSettings_kkvbp")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 1
 
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Fish/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Fish/Area2D" to="." method="_on_area_2d_mouse_exited"]

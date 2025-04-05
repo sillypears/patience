@@ -1,6 +1,5 @@
 extends Control
 
-
 @onready var finish_button: Button = $FinishButton
 @onready var button_timer: Timer = $ButtonTimer
 
@@ -12,7 +11,7 @@ func _ready() -> void:
 	finish_button.position.x = mouser.x + randi_range(-20, 20)
 	finish_button.position.y = mouser.y + randi_range(-20, 20)
 	print_debug(finish_button.position)
-
+	
 func _process(delta: float) -> void:
 	pass
 

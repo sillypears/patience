@@ -7,10 +7,9 @@ extends Control
 
 @export var prize_value: int = 1
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	GM.GAME_STATE = GM.GAME_STATES.GAME
+
 func _process(delta: float) -> void:
 	GM.TOTAL_SECONDS += 1
 
@@ -31,14 +30,14 @@ func _input(event) -> void:
 				add_child(rando_instance)
 
 	if touch_screen_button.is_pressed():
-		GM.CLICKS += prize_value
+		GM.TRACKED["CLICKS"] += prize_value
 		var animated_cursor = cursor_anim.instantiate()
 		animated_cursor.position = event.position
 		add_child(animated_cursor)
 		
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
-			GM.CLICKS += prize_value
+			GM.TRACKED["CLICKS"] += prize_value
 			var animated_cursor = cursor_anim.instantiate()
 			animated_cursor.position = event.position
 			add_child(animated_cursor)

@@ -5,7 +5,7 @@ extends Control
 
 
 func _ready() -> void:
-	travel_label_data.text = str(GM.MOUSE_TRAVELED)
+	travel_label_data.text = str(GM.TRACKED["MOUSE_TRAVELED"])
 	travel_label_data.position = get_local_mouse_position()
 	#.Input.get_vector()
 	

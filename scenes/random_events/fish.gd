@@ -1,16 +1,17 @@
-extends AnimatedSprite2D
+extends Node2D
 
 @onready var screen_size = get_viewport_rect().size
-@onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $VisibleOnScreenNotifier2D
+@onready var visible_on_screen_notifier_2d: VisibleOnScreenNotifier2D = $Fish/VisibleOnScreenNotifier2D
 @onready var GM = $"/root/GameManager"
-@onready var touched: Label = $Touched
+@onready var touched: Label = $Fish/Touched
+@onready var fish: AnimatedSprite2D = $Fish
 
 var ANGLE := randf_range(-1, 1)
 var velocity = Vector2()
-var fish_size = sprite_frames.get_frame_texture("default", 0).get_size() * scale
 var touched_val := 0
 
 func _ready() -> void:
+	var fish_size = fish.sprite_frames.get_frame_texture("default", 0).get_size() * scale
 	if touched_val == 0:
 		touched.hide()
 	visible_on_screen_notifier_2d.screen_exited.connect(_on_screen_exited)
@@ -20,7 +21,8 @@ func _ready() -> void:
 	velocity = Vector2(randi_range(-150, 150), randi_range(-150, 150))
 
 	if position.x < screen_size.x/2:
-		flip_h = true
+		scale.x = -1
+		touched.scale.x = -1
 		#velocity.x *= 
 
 func _process(delta: float) -> void:
@@ -37,6 +39,6 @@ func _on_area_2d_mouse_entered() -> void:
 
 func _on_area_2d_mouse_exited() -> void:
 	touched_val += 1
-	GM.FISH_TOUCHED += 1
+	GM.TRACKED["FISH_TOUCHED"] += 1
 	touched.hide()
 	

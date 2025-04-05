@@ -24,211 +24,230 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="Sep" type="VBoxContainer" parent="Contain"]
-layout_mode = 2
-size_flags_vertical = 4
-
-[node name="BoxTop" type="BoxContainer" parent="Contain/Sep"]
+[node name="Vbox" type="VBoxContainer" parent="Contain"]
 layout_mode = 2
 
-[node name="LEFT" type="HBoxContainer" parent="Contain/Sep/BoxTop"]
+[node name="Sep" type="VBoxContainer" parent="Contain/Vbox"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 5.0
+
+[node name="BoxTop" type="BoxContainer" parent="Contain/Vbox/Sep"]
+layout_mode = 2
+size_flags_vertical = 10
+size_flags_stretch_ratio = 2.0
+
+[node name="LEFT" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxTop"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
 
-[node name="LeftStuffHolder" type="VBoxContainer" parent="Contain/Sep/BoxTop/LEFT"]
+[node name="LeftStuffHolder" type="VBoxContainer" parent="Contain/Vbox/Sep/BoxTop/LEFT"]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 
-[node name="HighScore" type="Label" parent="Contain/Sep/BoxTop/LEFT/LeftStuffHolder"]
+[node name="HighScore" type="Label" parent="Contain/Vbox/Sep/BoxTop/LEFT/LeftStuffHolder"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "HIGHSCORE:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="TotalTime" type="Label" parent="Contain/Sep/BoxTop/LEFT/LeftStuffHolder"]
+[node name="TotalTime" type="Label" parent="Contain/Vbox/Sep/BoxTop/LEFT/LeftStuffHolder"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "TIME:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="SPACER" type="Label" parent="Contain/Sep/BoxTop/LEFT/LeftStuffHolder"]
+[node name="SPACER" type="Label" parent="Contain/Vbox/Sep/BoxTop/LEFT/LeftStuffHolder"]
 layout_mode = 2
 
-[node name="CENTER" type="HBoxContainer" parent="Contain/Sep/BoxTop"]
+[node name="CENTER" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxTop"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RIGHT" type="HBoxContainer" parent="Contain/Sep/BoxTop"]
+[node name="RIGHT" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxTop"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 3.0
 
-[node name="RightStuffHolder" type="VBoxContainer" parent="Contain/Sep/BoxTop/RIGHT"]
+[node name="RightStuffHolder" type="VBoxContainer" parent="Contain/Vbox/Sep/BoxTop/RIGHT"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HighScoreValue" type="Label" parent="Contain/Sep/BoxTop/RIGHT/RightStuffHolder"]
+[node name="HighScoreValue" type="Label" parent="Contain/Vbox/Sep/BoxTop/RIGHT/RightStuffHolder"]
 layout_mode = 2
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="TotalTimeValue" type="Label" parent="Contain/Sep/BoxTop/RIGHT/RightStuffHolder"]
+[node name="TotalTimeValue" type="Label" parent="Contain/Vbox/Sep/BoxTop/RIGHT/RightStuffHolder"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="SPACER" type="Label" parent="Contain/Sep/BoxTop/RIGHT/RightStuffHolder"]
+[node name="SPACER" type="Label" parent="Contain/Vbox/Sep/BoxTop/RIGHT/RightStuffHolder"]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Label" type="Label" parent="Contain/Sep"]
+[node name="Label" type="Label" parent="Contain/Vbox/Sep"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "--- DETAILS ---"
 label_settings = ExtResource("2_6adj5")
 
-[node name="BoxBot" type="BoxContainer" parent="Contain/Sep"]
+[node name="BoxBot" type="BoxContainer" parent="Contain/Vbox/Sep"]
 layout_mode = 2
-size_flags_vertical = 6
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
 
-[node name="LEFT" type="HBoxContainer" parent="Contain/Sep/BoxBot"]
+[node name="LEFT" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxBot"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
 
-[node name="LeftStuffHolder" type="VBoxContainer" parent="Contain/Sep/BoxBot/LEFT"]
+[node name="LeftStuffHolder" type="VBoxContainer" parent="Contain/Vbox/Sep/BoxBot/LEFT"]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 
-[node name="SPACER" type="Label" parent="Contain/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="SPACER" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="TotalClicks" type="Label" parent="Contain/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="TotalClicks" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "CLICKS:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="TrucksSeen" type="Label" parent="Contain/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="TrucksSeen" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "TRUCKS:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="MilesDisplayed" type="Label" parent="Contain/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="MilesDisplayed" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "MILES SEEN:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="MouseTraveled" type="Label" parent="Contain/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="MouseTraveled" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "MILES MOVED:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="BubblesSpawned" type="Label" parent="Contain/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="BubblesSpawned" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "BUBBLES:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="BubblesPopped" type="Label" parent="Contain/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="BubblesPopped" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "POPPED:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="FishSeen" type="Label" parent="Contain/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="FishSeen" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "FISH SPAWNED:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="FishTouched" type="Label" parent="Contain/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="FishTouched" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "FISH TOUCHED:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="CENTER" type="HBoxContainer" parent="Contain/Sep/BoxBot"]
+[node name="CENTER" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxBot"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RIGHT" type="HBoxContainer" parent="Contain/Sep/BoxBot"]
+[node name="RIGHT" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxBot"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 3.0
 
-[node name="RightStuffHolder" type="VBoxContainer" parent="Contain/Sep/BoxBot/RIGHT"]
+[node name="RightStuffHolder" type="VBoxContainer" parent="Contain/Vbox/Sep/BoxBot/RIGHT"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="SPACER" type="Label" parent="Contain/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="SPACER" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="TotalClicksValue" type="Label" parent="Contain/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="TotalClicksValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="TrucksSeenValue" type="Label" parent="Contain/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="TrucksSeenValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="MilesDisplayedValue" type="Label" parent="Contain/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="MilesDisplayedValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="MouseTraveledValue" type="Label" parent="Contain/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="MouseTraveledValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="BubblesSpawnedValue" type="Label" parent="Contain/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="BubblesSpawnedValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="BubblesPoppedValue" type="Label" parent="Contain/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="BubblesPoppedValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="FishSeenVal" type="Label" parent="Contain/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="FishSeenVal" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="FishTouchedVal" type="Label" parent="Contain/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="FishTouchedVal" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Contain/Vbox"]
+layout_mode = 2
+size_flags_vertical = 10
+alignment = 1
+
+[node name="Try Again" type="Button" parent="Contain/Vbox/HBoxContainer"]
+layout_mode = 2
+text = "Try Again
+"
+
+[connection signal="pressed" from="Contain/Vbox/HBoxContainer/Try Again" to="." method="_on_try_again_pressed"]
