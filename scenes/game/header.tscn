@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://6ial6c2b00h7"]
+[gd_scene load_steps=6 format=3 uid="uid://6ial6c2b00h7"]
 
 [ext_resource type="Script" path="res://scenes/game/header.gd" id="1_uns8x"]
 [ext_resource type="LabelSettings" uid="uid://i7dtrwpvhgbj" path="res://assets/fonts/dpcomic_header.tres" id="2_1e1al"]
 [ext_resource type="LabelSettings" uid="uid://gk71ig7026fe" path="res://assets/fonts/yoster_go_header.tres" id="3_c6eqn"]
+[ext_resource type="Texture2D" uid="uid://b0iscll1m0fge" path="res://assets/bg/game-bg.png" id="4_n6s3r"]
 
 [sub_resource type="Theme" id="Theme_2iyq3"]
 
@@ -21,6 +22,7 @@ script = ExtResource("1_uns8x")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_bottom = 41.0
 grow_horizontal = 2
 
 [node name="Score" type="HBoxContainer" parent="Holder"]
@@ -66,5 +68,10 @@ label_settings = ExtResource("3_c6eqn")
 
 [node name="TimerTimer" type="Timer" parent="."]
 autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(408, 640)
+texture = ExtResource("4_n6s3r")
 
 [connection signal="timeout" from="TimerTimer" to="." method="_on_timer_timer_timeout"]
