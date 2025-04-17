@@ -1,6 +1,8 @@
 extends Control
 
 @onready var GM = $"/root/GameManager"
+@onready var SM = $"/root/SoundManager"
+
 @onready var scaler: Timer = $Scaler
 @onready var title: Label = $Margin/BoxContainer/Vbox/Title
 
@@ -8,6 +10,8 @@ func _ready() -> void:
 	GM.GAME_STATE = GM.GAME_STATES.MAIN
 	await get_tree().process_frame
 	title.pivot_offset = title.size / 2
+
+	SoundManager.play_music(load("res://assets/sounds/music/song3.wav"))
 	
 func _process(delta: float) -> void:
 	var scale_factor = 1.0 + sin(Time.get_ticks_msec() / 1000.0 * 1.5) * 0.1
