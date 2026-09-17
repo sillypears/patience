@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7uqwd327hxf1"]
+[gd_scene format=3 uid="uid://c7uqwd327hxf1"]
 
-[ext_resource type="Script" path="res://scenes/gameover/gameover.gd" id="1_n2sm8"]
+[ext_resource type="Script" uid="uid://8lv7icj603xg" path="res://scenes/gameover/gameover.gd" id="1_n2sm8"]
 [ext_resource type="LabelSettings" uid="uid://gk71ig7026fe" path="res://assets/fonts/yoster_go_header.tres" id="2_6adj5"]
+[ext_resource type="LabelSettings" uid="uid://cswwk1ikg5r4r" path="res://assets/fonts/yoster_header.tres" id="2_uss00"]
 
-[node name="Gameover" type="Control"]
+[node name="Gameover" type="Control" unique_id=957071486]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_n2sm8")
 
-[node name="Contain" type="MarginContainer" parent="."]
+[node name="Contain" type="MarginContainer" parent="." unique_id=1237512804]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,228 +25,237 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="Vbox" type="VBoxContainer" parent="Contain"]
+[node name="VboxYouDidIt" type="VBoxContainer" parent="Contain" unique_id=172333539]
 layout_mode = 2
 
-[node name="Sep" type="VBoxContainer" parent="Contain/Vbox"]
+[node name="YouDidItLabel" type="Label" parent="Contain/VboxYouDidIt" unique_id=898528723]
+layout_mode = 2
+text = "YOU DID IT"
+label_settings = ExtResource("2_uss00")
+horizontal_alignment = 1
+
+[node name="Vbox" type="VBoxContainer" parent="Contain" unique_id=158857883]
+layout_mode = 2
+
+[node name="Sep" type="VBoxContainer" parent="Contain/Vbox" unique_id=699726604]
 layout_mode = 2
 size_flags_vertical = 6
 size_flags_stretch_ratio = 5.0
 
-[node name="BoxTop" type="BoxContainer" parent="Contain/Vbox/Sep"]
+[node name="BoxTop" type="BoxContainer" parent="Contain/Vbox/Sep" unique_id=1293494249]
 layout_mode = 2
 size_flags_vertical = 10
 size_flags_stretch_ratio = 2.0
 
-[node name="LEFT" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxTop"]
+[node name="LEFT" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxTop" unique_id=374722147]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
 
-[node name="LeftStuffHolder" type="VBoxContainer" parent="Contain/Vbox/Sep/BoxTop/LEFT"]
+[node name="LeftStuffHolder" type="VBoxContainer" parent="Contain/Vbox/Sep/BoxTop/LEFT" unique_id=1055573740]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 
-[node name="HighScore" type="Label" parent="Contain/Vbox/Sep/BoxTop/LEFT/LeftStuffHolder"]
+[node name="HighScore" type="Label" parent="Contain/Vbox/Sep/BoxTop/LEFT/LeftStuffHolder" unique_id=1151831362]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "HIGHSCORE:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="TotalTime" type="Label" parent="Contain/Vbox/Sep/BoxTop/LEFT/LeftStuffHolder"]
+[node name="TotalTime" type="Label" parent="Contain/Vbox/Sep/BoxTop/LEFT/LeftStuffHolder" unique_id=362901756]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "TIME:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="SPACER" type="Label" parent="Contain/Vbox/Sep/BoxTop/LEFT/LeftStuffHolder"]
+[node name="SPACER" type="Label" parent="Contain/Vbox/Sep/BoxTop/LEFT/LeftStuffHolder" unique_id=2127114534]
 layout_mode = 2
 
-[node name="CENTER" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxTop"]
+[node name="CENTER" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxTop" unique_id=1810318180]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RIGHT" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxTop"]
+[node name="RIGHT" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxTop" unique_id=369920492]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 3.0
 
-[node name="RightStuffHolder" type="VBoxContainer" parent="Contain/Vbox/Sep/BoxTop/RIGHT"]
+[node name="RightStuffHolder" type="VBoxContainer" parent="Contain/Vbox/Sep/BoxTop/RIGHT" unique_id=230419559]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="HighScoreValue" type="Label" parent="Contain/Vbox/Sep/BoxTop/RIGHT/RightStuffHolder"]
+[node name="HighScoreValue" type="Label" parent="Contain/Vbox/Sep/BoxTop/RIGHT/RightStuffHolder" unique_id=923334848]
 layout_mode = 2
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="TotalTimeValue" type="Label" parent="Contain/Vbox/Sep/BoxTop/RIGHT/RightStuffHolder"]
+[node name="TotalTimeValue" type="Label" parent="Contain/Vbox/Sep/BoxTop/RIGHT/RightStuffHolder" unique_id=258409063]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="SPACER" type="Label" parent="Contain/Vbox/Sep/BoxTop/RIGHT/RightStuffHolder"]
+[node name="SPACER" type="Label" parent="Contain/Vbox/Sep/BoxTop/RIGHT/RightStuffHolder" unique_id=924221723]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="Label" type="Label" parent="Contain/Vbox/Sep"]
+[node name="Label" type="Label" parent="Contain/Vbox/Sep" unique_id=1741236588]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "--- DETAILS ---"
 label_settings = ExtResource("2_6adj5")
 
-[node name="BoxBot" type="BoxContainer" parent="Contain/Vbox/Sep"]
+[node name="BoxBot" type="BoxContainer" parent="Contain/Vbox/Sep" unique_id=1048138540]
 layout_mode = 2
 size_flags_vertical = 2
 size_flags_stretch_ratio = 0.0
 
-[node name="LEFT" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxBot"]
+[node name="LEFT" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxBot" unique_id=617706941]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
 
-[node name="LeftStuffHolder" type="VBoxContainer" parent="Contain/Vbox/Sep/BoxBot/LEFT"]
+[node name="LeftStuffHolder" type="VBoxContainer" parent="Contain/Vbox/Sep/BoxBot/LEFT" unique_id=1694268599]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 
-[node name="SPACER" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="SPACER" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder" unique_id=980269835]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="TotalClicks" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="TotalClicks" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder" unique_id=2053996713]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "CLICKS:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="TrucksSeen" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="TrucksSeen" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder" unique_id=1642414127]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "TRUCKS:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="MilesDisplayed" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="MilesDisplayed" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder" unique_id=2049486829]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "MILES SEEN:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="MouseTraveled" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="MouseTraveled" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder" unique_id=745147328]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "MILES MOVED:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="BubblesSpawned" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="BubblesSpawned" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder" unique_id=843832558]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "BUBBLES:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="BubblesPopped" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="BubblesPopped" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder" unique_id=374553610]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "POPPED:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="FishSeen" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="FishSeen" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder" unique_id=801928759]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "FISH SPAWNED:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="FishTouched" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder"]
+[node name="FishTouched" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder" unique_id=1055270780]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "FISH TOUCHED:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
-[node name="CENTER" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxBot"]
+[node name="CENTER" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxBot" unique_id=1297212013]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RIGHT" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxBot"]
+[node name="RIGHT" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxBot" unique_id=1730225631]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 3.0
 
-[node name="RightStuffHolder" type="VBoxContainer" parent="Contain/Vbox/Sep/BoxBot/RIGHT"]
+[node name="RightStuffHolder" type="VBoxContainer" parent="Contain/Vbox/Sep/BoxBot/RIGHT" unique_id=244847067]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="SPACER" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="SPACER" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder" unique_id=1489816828]
 layout_mode = 2
 size_flags_horizontal = 8
 
-[node name="TotalClicksValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="TotalClicksValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder" unique_id=275561037]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="TrucksSeenValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="TrucksSeenValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder" unique_id=1383570638]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="MilesDisplayedValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="MilesDisplayedValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder" unique_id=1803332978]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="MouseTraveledValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="MouseTraveledValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder" unique_id=1882766631]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="BubblesSpawnedValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="BubblesSpawnedValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder" unique_id=17947684]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="BubblesPoppedValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="BubblesPoppedValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder" unique_id=1520490328]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="FishSeenVal" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="FishSeenVal" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder" unique_id=1201126163]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="FishTouchedVal" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder"]
+[node name="FishTouchedVal" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder" unique_id=2084738731]
 layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Contain/Vbox"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Contain/Vbox" unique_id=500891032]
 layout_mode = 2
 size_flags_vertical = 10
 alignment = 1
 
-[node name="Try Again" type="Button" parent="Contain/Vbox/HBoxContainer"]
+[node name="Try Again" type="Button" parent="Contain/Vbox/HBoxContainer" unique_id=135845326]
 layout_mode = 2
 text = "Try Again
 "
