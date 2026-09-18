@@ -44,12 +44,20 @@ jobs:
       - name: Verify Godot version
         run: godot --version
 
+      - name: List export templates (debug)
+        run: |
+          ls -R ~/.local/share/godot/export_templates/ 2>&1 | head -n 100 || true
+          echo "Godot binary: $(which godot) $(godot --version)"
+
       - name: Export Web build
         run: |
           mkdir -p docs
-          godot --headless --export-release "GitHub Pages" docs/index.html --verbose 2>&1 | tail -n 100
-          ls -lh docs/
-          test -f docs/index.html || (echo "Export failed — docs/index.html missing" && exit 1)
+          # tee keeps full log; tail hid the actual ERROR lines earlier
+          godot --headless --export-release "GitHub Pages" docs/index.html --verbose 2>&1 | tee export.log
+          echo "--- export.log filtered ---"
+          grep -i "error\|export\|template\|failed" export.log | head -n 100 || true
+          ls -lh docs/ || true
+          test -f docs/index.html || (echo "Export failed — docs/index.html missing" && cat export.log && exit 1)
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
