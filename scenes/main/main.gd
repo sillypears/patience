@@ -29,5 +29,9 @@ func _on_start_pressed() -> void:
 	t.start()
 	
 func _go_to_game() -> void:
-	SceneManager.change_scene("res://scenes/game/game.tscn")
+	var sm = get_node_or_null("/root/SceneManager")
+	if sm and sm.has_method("change_scene"):
+		sm.change_scene("res://scenes/game/game.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/game/game.tscn")
 	

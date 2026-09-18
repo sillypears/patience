@@ -56,10 +56,12 @@ func _ready() -> void:
 	print(typeof(TRACKED["CLICKS"]))
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("end_game") or (Input.is_key_pressed(KEY_P) and Input.is_key_pressed(KEY_SHIFT)):
+	# end_game is now "'" (apostrophe) per project.godot:66 — keep Shift+P fallback for local testing
+	if Input.is_action_just_pressed("end_game") or Input.is_key_pressed(KEY_APOSTROPHE) or Input.is_key_pressed(KEY_QUOTEDBL) or (Input.is_key_pressed(KEY_P) and (Input.is_key_pressed(KEY_SHIFT) or Input.is_physical_key_pressed(KEY_SHIFT))):
 		print_debug("why'd you push that — end_game triggered")
-		if SceneManager and SceneManager.has_method("change_scene"):
-			SceneManager.change_scene("res://scenes/gameover/gameover.tscn")
+		var sm = get_node_or_null("/root/SceneManager")
+		if sm and sm.has_method("change_scene"):
+			sm.change_scene("res://scenes/gameover/gameover.tscn")
 		else:
 			get_tree().change_scene_to_file("res://scenes/gameover/gameover.tscn")
 		

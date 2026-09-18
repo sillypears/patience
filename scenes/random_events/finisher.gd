@@ -18,9 +18,9 @@ func _process(delta: float) -> void:
 
 func _on_finish_button_pressed() -> void:
 	print_debug("Finisher pressed — changing to gameover")
-	# SceneManager can fail in HTML5 if transition shaders aren't ready; fallback to tree change
-	if SceneManager and SceneManager.has_method("change_scene"):
-		SceneManager.change_scene("res://scenes/gameover/gameover.tscn", {"animation_name_enter": "fade", "pattern_leave": "radial"})
+	var sm = get_node_or_null("/root/SceneManager")
+	if sm and sm.has_method("change_scene"):
+		sm.change_scene("res://scenes/gameover/gameover.tscn", {"animation_name_enter": "fade", "pattern_leave": "radial"})
 	else:
 		get_tree().change_scene_to_packed(GAMEOVER)
 	# Safety fallback if SceneManager doesn't switch within a frame (e.g. web)

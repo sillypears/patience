@@ -30,4 +30,8 @@ func _on_timer_timeout() -> void:
 
 
 func _on_timer_2_timeout() -> void:
-	SceneManager.change_scene("res://scenes/main/main.tscn")
+	var sm = get_node_or_null("/root/SceneManager")
+	if sm and sm.has_method("change_scene"):
+		sm.change_scene("res://scenes/main/main.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/main/main.tscn")

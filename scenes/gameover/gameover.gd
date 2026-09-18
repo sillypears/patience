@@ -52,4 +52,8 @@ func _on_entry_failed(reason: String) -> void:
 
 func _on_try_again_pressed() -> void:
 	GM.reset_game()
-	SceneManager.change_scene("res://scenes/game/game.tscn")
+	var sm = get_node_or_null("/root/SceneManager")
+	if sm and sm.has_method("change_scene"):
+		sm.change_scene("res://scenes/game/game.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/game/game.tscn")
