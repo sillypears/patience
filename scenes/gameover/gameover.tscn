@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://8lv7icj603xg" path="res://scenes/gameover/gameover.gd" id="1_n2sm8"]
 [ext_resource type="LabelSettings" uid="uid://gk71ig7026fe" path="res://assets/fonts/yoster_go_header.tres" id="2_6adj5"]
-[ext_resource type="LabelSettings" uid="uid://cswwk1ikg5r4r" path="res://assets/fonts/yoster_header.tres" id="2_uss00"]
+[ext_resource type="PackedScene" uid="uid://dolp1snx8nv72" path="res://scenes/gameover/entry_form.tscn" id="3_entry"]
+[ext_resource type="Theme" uid="uid://dfahdngh2oopn" path="res://assets/theme/main_theme_label.tres" id="3_mdibr"]
+[ext_resource type="Theme" uid="uid://dqce6axhs6crh" path="res://assets/theme/main_theme_button.tres" id="4_theme"]
 
 [node name="Gameover" type="Control" unique_id=957071486]
 layout_mode = 3
@@ -11,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_theme")
 script = ExtResource("1_n2sm8")
 
 [node name="Contain" type="MarginContainer" parent="." unique_id=1237512804]
@@ -30,8 +33,10 @@ layout_mode = 2
 
 [node name="YouDidItLabel" type="Label" parent="Contain/VboxYouDidIt" unique_id=898528723]
 layout_mode = 2
+theme = ExtResource("3_mdibr")
+theme_type_variation = &"HeaderLabel"
+theme_override_font_sizes/font_size = 50
 text = "YOU DID IT"
-label_settings = ExtResource("2_uss00")
 horizontal_alignment = 1
 
 [node name="Vbox" type="VBoxContainer" parent="Contain" unique_id=158857883]
@@ -60,6 +65,7 @@ size_flags_vertical = 4
 [node name="HighScore" type="Label" parent="Contain/Vbox/Sep/BoxTop/LEFT/LeftStuffHolder" unique_id=1151831362]
 layout_mode = 2
 size_flags_horizontal = 8
+theme = ExtResource("3_mdibr")
 text = "HIGHSCORE:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
@@ -184,6 +190,13 @@ text = "FISH TOUCHED:"
 label_settings = ExtResource("2_6adj5")
 horizontal_alignment = 2
 
+[node name="Finishers" type="Label" parent="Contain/Vbox/Sep/BoxBot/LEFT/LeftStuffHolder" unique_id=1055270781]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "FINISHERS:"
+label_settings = ExtResource("2_6adj5")
+horizontal_alignment = 2
+
 [node name="CENTER" type="HBoxContainer" parent="Contain/Vbox/Sep/BoxBot" unique_id=1297212013]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -249,6 +262,20 @@ layout_mode = 2
 size_flags_vertical = 1
 text = "-1"
 label_settings = ExtResource("2_6adj5")
+
+[node name="FinishersValue" type="Label" parent="Contain/Vbox/Sep/BoxBot/RIGHT/RightStuffHolder" unique_id=2084738732]
+layout_mode = 2
+size_flags_vertical = 1
+text = "-1"
+label_settings = ExtResource("2_6adj5")
+
+[node name="EntrySeparator" type="HSeparator" parent="Contain/Vbox" unique_id=600000001]
+layout_mode = 2
+
+[node name="EntryForm" parent="Contain/Vbox" unique_id=600000002 instance=ExtResource("3_entry")]
+layout_mode = 2
+size_flags_vertical = 10
+theme = null
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Contain/Vbox" unique_id=500891032]
 layout_mode = 2

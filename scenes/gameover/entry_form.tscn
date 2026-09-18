@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dolp1snx8nv72"]
+
+[ext_resource type="Script" uid="uid://crtivh708esnd" path="res://scenes/gameover/entry_form.gd" id="1_aaaaa"]
+[ext_resource type="Theme" uid="uid://dqce6axhs6crh" path="res://assets/theme/main_theme_button.tres" id="2_theme"]
+
+[node name="EntryForm" type="Control" unique_id=987654321]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_aaaaa")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=111111111]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Title" type="Label" parent="VBox" unique_id=222222222]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"HeaderLabel"
+text = "SUBMIT YOUR SCORE"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="VBox" unique_id=333333333]
+modulate = Color(0.85, 0.85, 0.85, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"SmallLabel"
+text = "Enter your name and email to save your entry"
+horizontal_alignment = 1
+
+[node name="NameInput" type="LineEdit" parent="VBox" unique_id=444444444]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Name (2-50 characters)"
+alignment = 1
+clear_button_enabled = true
+
+[node name="EmailInput" type="LineEdit" parent="VBox" unique_id=555555555]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Email address"
+alignment = 1
+clear_button_enabled = true
+
+[node name="SubmitButton" type="Button" parent="VBox" unique_id=666666666]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Submit Entry"
+
+[node name="StatusLabel" type="Label" parent="VBox" unique_id=777777777]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"SmallLabel"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Hint" type="Label" parent="VBox" unique_id=888888888]
+visible = false
+modulate = Color(0.7, 0.7, 0.7, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"SmallLabel"
+text = "Backend not yet live — placeholder will simulate success"
+horizontal_alignment = 1
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=999999999]
+
+[node name="FakeTimer" type="Timer" parent="." unique_id=101010101]
+wait_time = 0.8
+one_shot = true
+
+[connection signal="text_changed" from="VBox/NameInput" to="." method="_on_text_changed"]
+[connection signal="text_changed" from="VBox/EmailInput" to="." method="_on_text_changed"]
+[connection signal="pressed" from="VBox/SubmitButton" to="." method="_on_submit_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_request_completed"]
+[connection signal="timeout" from="FakeTimer" to="." method="_on_fake_timer_timeout"]
