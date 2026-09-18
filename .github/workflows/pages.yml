@@ -51,10 +51,10 @@ jobs:
       - name: Export Web build
         run: |
           mkdir -p docs
-          # tee keeps full log; tail hid the actual ERROR lines earlier
-          godot --headless --export-release "GitHub Pages" docs/index.html --verbose 2>&1 | tee export.log
+          # --verbose adds 877 Orphan StringName lines and hides real errors; omit it
+          godot --headless --export-release "GitHub Pages" docs/index.html 2>&1 | tee export.log
           echo "--- export.log filtered ---"
-          grep -i "error\|export\|template\|failed" export.log | head -n 100 || true
+          grep -i "error\|export\|template\|failed\|Godot Engine" export.log | head -n 100 || true
           ls -lh docs/ || true
           test -f docs/index.html || (echo "Export failed — docs/index.html missing" && cat export.log && exit 1)
 
