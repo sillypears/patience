@@ -51,8 +51,8 @@ jobs:
       - name: Export Web build
         run: |
           mkdir -p docs
-          # --verbose adds 877 Orphan StringName lines and hides real errors; omit it
-          godot --headless --export-release "GitHub Pages" docs/index.html 2>&1 | tee export.log
+          # preset is named "Web" in export_presets.cfg:1 (not "GitHub Pages")
+          godot --headless --export-release "Web" docs/index.html 2>&1 | tee export.log
           echo "--- export.log filtered ---"
           grep -i "error\|export\|template\|failed\|Godot Engine" export.log | head -n 100 || true
           ls -lh docs/ || true

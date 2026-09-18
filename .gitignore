@@ -2,6 +2,7 @@
 .godot/
 /android/
 addons/*
+docs/*
 
 # Local secrets — same webhook as GitHub Secret, never committed
 .env
