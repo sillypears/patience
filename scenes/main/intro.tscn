@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://onj60mp257wk"]
+[gd_scene format=3 uid="uid://onj60mp257wk"]
 
-[ext_resource type="Script" path="res://scenes/main/intro.gd" id="1_y2fjw"]
+[ext_resource type="Script" uid="uid://chwvpy6n2dnmm" path="res://scenes/main/intro.gd" id="1_y2fjw"]
 [ext_resource type="FontFile" uid="uid://cq8rqugk5q4to" path="res://assets/fonts/yoster.ttf" id="2_bha8j"]
 [ext_resource type="LabelSettings" uid="uid://n3yxqlsiejgq" path="res://assets/fonts/yoster_intro_top.tres" id="2_rhyxd"]
 [ext_resource type="LabelSettings" uid="uid://doiy7xrnsvssk" path="res://assets/fonts/yoster_intro_bottom_right.tres" id="3_e77i7"]
@@ -10,7 +10,7 @@ line_spacing = 1.0
 font = ExtResource("2_bha8j")
 font_size = 26
 
-[node name="Intro" type="Control"]
+[node name="Intro" type="Control" unique_id=1549979223]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,7 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y2fjw")
 
-[node name="Margin" type="MarginContainer" parent="."]
+[node name="Margin" type="MarginContainer" parent="." unique_id=1172991980]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,16 +31,16 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="Box" type="VBoxContainer" parent="Margin"]
+[node name="Box" type="VBoxContainer" parent="Margin" unique_id=548861401]
 layout_mode = 2
 
-[node name="BoxTop" type="HBoxContainer" parent="Margin/Box"]
+[node name="BoxTop" type="HBoxContainer" parent="Margin/Box" unique_id=1832314842]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.0
 alignment = 1
 
-[node name="AI" type="Label" parent="Margin/Box/BoxTop"]
+[node name="AI" type="Label" parent="Margin/Box/BoxTop" unique_id=649356542]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -48,27 +48,27 @@ label_settings = ExtResource("2_rhyxd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BoxBot" type="VBoxContainer" parent="Margin/Box"]
+[node name="BoxBot" type="VBoxContainer" parent="Margin/Box" unique_id=1806132129]
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="Sponsor" type="Label" parent="Margin/Box/BoxBot"]
+[node name="Sponsor" type="Label" parent="Margin/Box/BoxBot" unique_id=2061031355]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Sponsored and Paid For By Bad Produce LLC"
 label_settings = SubResource("LabelSettings_qdee3")
 horizontal_alignment = 1
 
-[node name="Copyright" type="Label" parent="Margin/Box/BoxBot"]
+[node name="Copyright" type="Label" parent="Margin/Box/BoxBot" unique_id=303780282]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Stupid Fruit Games 2025 ®™©"
 label_settings = ExtResource("3_e77i7")
 horizontal_alignment = 1
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1267297248]
 
-[node name="Timer2" type="Timer" parent="."]
+[node name="Timer2" type="Timer" parent="." unique_id=1424951610]
 wait_time = 2.0
 one_shot = true
 
