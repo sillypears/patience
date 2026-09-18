@@ -1,0 +1,68 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Godot 4.7
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: 4.7.2
+          use-godotenv: false
+          include-templates: true
+
+      - name: Inject Discord webhook (build-time secret)
+        env:
+          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          if [ -n "$WEBHOOK" ]; then
+            echo "Injecting webhook into project.godot"
+            # project.godot has [discord] webhook_url=""  (scenes/gameover/entry_form.gd:24 reads this)
+            sed -i "s|^webhook_url=\"\"|webhook_url=\"$WEBHOOK\"|" project.godot
+            grep -F 'webhook_url=' project.godot || true
+          else
+            echo "No DISCORD_WEBHOOK_URL secret set — build will use placeholder (simulated 204)"
+          fi
+
+      - name: Verify Godot version
+        run: godot --version
+
+      - name: Export Web build
+        run: |
+          mkdir -p docs
+          godot --headless --export-release "GitHub Pages" docs/index.html --verbose 2>&1 | tail -n 100
+          ls -lh docs/
+          test -f docs/index.html || (echo "Export failed — docs/index.html missing" && exit 1)
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

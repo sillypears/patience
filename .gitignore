@@ -7,3 +7,4 @@ addons/*
 .env
 .env.local
 discord_webhook.local.cfg
+*.aseprite
